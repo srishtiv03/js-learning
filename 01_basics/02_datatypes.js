@@ -16,7 +16,7 @@ bigint
 string => ""
 boolean => true/false
 null => standalone value
-undefined
+undefined => not assigned abhi
 symbol => unique
 */
 
