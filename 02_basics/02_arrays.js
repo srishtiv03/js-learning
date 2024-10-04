@@ -22,6 +22,8 @@ console.log(Array.isArray("srishti")) //false
 console.log(Array.isArray(["srishti"])) //true
 console.log(Array.from("srishti")) // ['s','r','i','s','h','t','i']
 console.log(Array.from({name : "srishti"})) // []
+// when Array.from() is not able to make an array it returns [] as in previous case. 
+// we have to mention array to be formed of keys or values.
 
 let score1 = 100
 let score2 = 200
