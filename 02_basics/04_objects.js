@@ -62,12 +62,40 @@ const users = [
 // console.log(tinderUser)
 // { id: '123abc', name: 'Sammy', isLoggedIn: false }
 
-console.log(Object.keys(tinderUser)) // array of keys
-// [ 'id', 'name', 'isLoggedIn' ]
-console.log(Object.values(tinderUser)) // array of values
-// [ '123abc', 'Sammy', false ]
-console.log(Object.entries(tinderUser)) // array of arrays of entires
-// [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
+// console.log(Object.keys(tinderUser)) // array of keys
+// // [ 'id', 'name', 'isLoggedIn' ]
+// console.log(Object.values(tinderUser)) // array of values
+// // [ '123abc', 'Sammy', false ]
+// console.log(Object.entries(tinderUser)) // array of arrays of entires
+// // [ [ 'id', '123abc' ], [ 'name', 'Sammy' ], [ 'isLoggedIn', false ] ]
 
-console.log(tinderUser.hasOwnProperty('isLoggedIn')) // true
-console.log(tinderUser.hasOwnProperty('isLogged')) // false
+// console.log(tinderUser.hasOwnProperty('isLoggedIn')) // true
+// console.log(tinderUser.hasOwnProperty('isLogged')) // false
+
+const course = {
+    coursename: "js in hindi",
+    price: "999",
+    courseInstructor: "hitesh"
+}
+
+// course.courseInstructor
+
+// const {courseInstructor} = course 
+// OR
+const {courseInstructor : instructor} = course
+
+// console.log(courseInstructor)
+// console.log(instructor)
+
+// JSON
+// {
+//     "name" : "hitesh",
+//     "coursename" : "js in hindi",
+//     "price" : "free"
+// }
+
+[
+    {},
+    {},
+    {}
+]
