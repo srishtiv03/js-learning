@@ -87,7 +87,7 @@ const {courseInstructor : instructor} = course
 // console.log(courseInstructor)
 // console.log(instructor)
 
-// JSON
+// JSON - it is similar to an object. the keys are strings and written in ""
 // {
 //     "name" : "hitesh",
 //     "coursename" : "js in hindi",
