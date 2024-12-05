@@ -20,7 +20,7 @@ const temperature = 41
 
 // console.log(`User power: ${power}`) // out of scope
 
-const balance = 1000
+// const balance = 1000
 
 // if(balance > 500) console.log("test"), console.log("test2");
 
