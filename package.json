@@ -1,0 +1,19 @@
+{
+  "name": "js-learning",
+  "version": "1.0.0",
+  "description": "A code repository for js learning.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.19.0",
+    "eslint": "^9.19.0",
+    "eslint-plugin-html": "^8.1.2",
+    "eslint-plugin-react": "^7.37.4",
+    "globals": "^15.14.0"
+  }
+}
