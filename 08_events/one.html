@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li> 
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // all the events in js are run sequentially
+    // but there are some exceptions like asynchronous events
+    // browser events are also exceptions
+    // they invoke due to some activity - mouse click, drag and drop, keyboard
+    // adding an onclick event on line 15 on id = "owl" is not a feasible approach in js, but is a feasible approach in react
+
+    // attachEvent
+    // jQuery - on
+
+    // document.getElementById('owl').onclick = function(){
+    //     alert('owl clicked')
+    // }
+    // there is no problem in this approach but this method provides us with less features, we should use event listener because not only will they give us onclick but also propogation ability
+    // the following is the best approach(now-a-days)
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     // alert('owl clicked')
+    //     console.log(e);
+    // }, false) // false is default
+
+    // event propogation - it has 2 contexts : event bubbling and event capturing
+    // false - event bubbling (most of the projects we use this only)
+    // sometimes we have to use event capturing as well
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, false) 
+
+    // we have to study which console will appear first when 'owl' is clicked
+    // output - "owl clicked" then "clicked inside the ul"
+    // bubbling concept
+    // bubble goes from down to up
+    // we clicked on the image of owl, so -> image then li then ul, that's why our output came that way (bubbling)
+    // script is tracking from inside to outside => event propogation
+
+    // capturing mode (true) - top to bottom
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, true)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    // }, true) 
+    // not the output - clicked inside the ul and then owl clicked
+
+    // if we don't want the bubbling to happen; to keep inner element separate from outer element - use stopPropogation
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation();
+    // }, false) 
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // }, false)
+
+    
+    
+</script>
+</html>
