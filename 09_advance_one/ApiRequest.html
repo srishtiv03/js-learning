@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Card</title>
+    <style>
+        body {
+            background-color: rgba(12, 99, 213, 0.133);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        .card h2 {
+            margin: 10px 0 5px;
+        }
+        .card p {
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="profile-card">
+        <p>Loading...</p>
+    </div>
+
+    <script>
+        const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(this.responseText);
+                
+                const card = document.getElementById('profile-card');
+                card.innerHTML = `
+                    <img src="${data.avatar_url}" alt="Hitesh Choudhary">
+                    <h2>${data.name}</h2>
+                    <p>Followers: ${data.followers}</p>
+                `;
+            }
+        }
+        xhr.send();
+    </script>
+</body>
+</html>
